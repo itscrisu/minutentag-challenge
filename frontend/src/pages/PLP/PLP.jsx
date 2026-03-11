@@ -59,13 +59,15 @@ const PLP = () => {
           <p className={styles.loadingText}>Loading products...</p>
         ) : (
           <div className={styles.grid}>
-            {products.map((product) => {
+            {products.map((product, index) => {
               const sp = stockPrices[product.id];
+              const isEven = index % 2 === 0;
               return (
                 <ProductCard
                   key={product.id}
                   product={product}
                   price={sp ? sp.price : null}
+                  mirrored={!isEven}
                 />
               );
             })}

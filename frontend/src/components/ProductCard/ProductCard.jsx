@@ -1,9 +1,8 @@
-import { Plus } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { toProductSlug, formatPrice } from '../../utils/formatters.js';
 import styles from './ProductCard.module.css';
 
-const ProductCard = ({ product, price }) => {
+const ProductCard = ({ product, price, mirrored = false }) => {
   const navigate = useNavigate();
   const slug = toProductSlug(product.id, product.brand);
 
@@ -26,7 +25,7 @@ const ProductCard = ({ product, price }) => {
 
   return (
     <article
-      className={styles.card}
+      className={`${styles.card} ${mirrored ? styles.cardMirrored : ''}`}
       onClick={handleCardClick}
       onKeyDown={handleKeyDown}
       tabIndex={0}
@@ -53,7 +52,9 @@ const ProductCard = ({ product, price }) => {
         aria-label={`Add ${product.brand} to cart`}
         tabIndex={0}
       >
-        <Plus size={24} strokeWidth={2.5} />
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 5v14M5 12h14" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" />
+        </svg>
       </button>
     </article>
   );

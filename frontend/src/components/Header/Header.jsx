@@ -17,7 +17,7 @@ const Header = () => {
       </button>
       <div className={styles.avatar}>
         <img
-          src="/icons/Sin ti╠ütulo-1.jpg"
+          src="/icons/avatar.jpg"
           alt="User avatar"
           className={styles.avatarImage}
         />

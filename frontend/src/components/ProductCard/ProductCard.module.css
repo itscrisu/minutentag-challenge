@@ -14,6 +14,10 @@
   min-height: 203px;
 }
 
+.cardMirrored {
+  border-radius: 32px 12px 12px 12px;
+}
+
 .card:hover,
 .card:focus-visible {
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
